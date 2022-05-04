@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_migrate import Migrate
-from webapp.quiz.app import api_bp
+from webapp.app import api_bp
 from webapp.db import db
 
 def create_app():

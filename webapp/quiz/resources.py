@@ -13,7 +13,7 @@ class Quest(Resource):
         db.session.add(post)
         db.session.commit()
         post_id = db.session.query(Post).order_by(Post.id.desc()).first()
-        last_quest = db.session.query(Question).order_by(Question.question.desc()).first()
+        last_quest = db.session.query(Question).order_by(Question.my_id.desc()).first()
         error = questions_quiz(args['num_questions'], post_id.id)
         last_quest = {'last_question' : str(last_quest)}
         if error:
