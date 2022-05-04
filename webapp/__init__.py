@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_migrate import Migrate
-from webapp.app import api_bp
+from webapp.api import api_bp
 from webapp.db import db
 
 def create_app():
