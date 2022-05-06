@@ -5,3 +5,4 @@ env/
 .DS_store
 __pycache__/
 config.py
+pgdata/

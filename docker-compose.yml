@@ -1,0 +1,31 @@
+version: '4.7'
+
+services:
+  db:
+    image: postgres:14.2
+    environment:
+      POSTGRES_DB: "mydb"
+      POSTGRES_USER: "ivan"
+      POSTGRES_PASSWORD: "123456"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      - ../2. Init Database:/docker-entrypoint-initdb.d
+      - .:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  
+  webapp:
+    build: ./
+    container_name: webapp-flask
+    environment:
+      - PYTHONUNBUFFERED = True
+    restart: unless-stopped
+    volumes:
+      - ./webapp:/webapp
+    ports:
+      - "5000:5000"
+    command: python main.py
+    depends_on:
+      - db
+  
+
