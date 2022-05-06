@@ -8,7 +8,7 @@
 
 ### <br><b>Откройте консоль</b>
 
-<b>Выполните в консоле</b>             
+<b>Выполните в консоли</b>             
     <details><summary> Команду: </summary>
 ```
 git clone https://github.com/IgV52/RestAPI_Flask.git
@@ -45,7 +45,7 @@ POSTGRES_PASSWORD: "{пароль}"
 
 ### <br><b>Откройте консоль</b>
 
-<b>Выполните в консоле</b>             
+<b>Выполните в консоли</b>             
     <details><summary> Команду: </summary>
 ```
 docker-compose up --build
@@ -60,7 +60,7 @@ docker-compose up --build
 
 <br><b>Зайдите в консоль</b>
 
-<b>Напишите в консоле </b>             
+<b>Выполните в консоли</b>             
     <details><summary> Команду: </summary>
 ```
 curl -i -H "Content-Type: application/json" -X POST -d "{""num_questions"": int(число)}" http://адрес_вашего_сервера:5000/api/
