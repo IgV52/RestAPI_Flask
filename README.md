@@ -67,6 +67,4 @@ curl -i -H "Content-Type: application/json" -X POST -d "{""num_questions"": int(
 ```
 </details>
 
-
-
-
+## <br><b>Тестовый запрос можно отправить на адрес: http://188.93.210.155:5000/api/
