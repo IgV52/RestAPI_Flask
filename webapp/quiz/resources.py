@@ -1,7 +1,7 @@
 from flask_restful import Resource, reqparse
-from webapp.quiz.utils import questions_quiz
 from webapp.db import db
 from webapp.quiz.models import Post, Question
+from webapp.quiz.utils import questions_quiz
 
 parser = reqparse.RequestParser()
 
@@ -13,16 +13,16 @@ class Quest(Resource):
         args = parser.parse_args()
         post = Post(count=args['num_questions'])
         
-        db.session.add(post)
-        db.session.commit()
+        last_quest = {"answer": "Error input"}
+
+        if post.count:
+            db.session.add(post)
+            db.session.commit()
         
-        post_id = db.session.query(Post).order_by(Post.id.desc()).first()
-        last_quest = db.session.query(Question).order_by(Question.my_id.desc()).first()
-        error = questions_quiz(args['num_questions'], post_id.id)
-        
-        last_quest = {'last_question' : str(last_quest)}
-        if error:
-            last_quest = error
+            post_id = Post.query.order_by(Post.id.desc()).first()
+            last_quest = {"Question": str(Question.query.order_by(Question.my_id.desc()).first())}
+            questions_quiz(args['num_questions'], post_id.id)
+    
         return last_quest, 201
 
 

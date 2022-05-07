@@ -1,13 +1,13 @@
 from sqlalchemy import Column, Integer, String, Date, ForeignKey
-from webapp.db import db
 from sqlalchemy.orm import relationship
+from webapp.db import db
 
 class Post(db.Model):
     __tablename__ = 'posts'
 
     id = Column(Integer, primary_key=True)
     count = Column(Integer)
-    question = relationship('Question', backref='post')
+    question = relationship('Question', backref='posts')
 
 class Question(db.Model):
     __tablename__ = 'questions'
@@ -21,4 +21,4 @@ class Question(db.Model):
     post_id = Column(Integer, ForeignKey('posts.id'))
 
     def __repr__(self):
-        return f'Question {self.id}, {self.question}'
+        return self.question

@@ -1,6 +1,6 @@
 from flask import Flask
-from webapp.quiz.api import api_bp
 from webapp.db import db
+from webapp.quiz.api import api_bp
 
 def create_app():
     app = Flask(__name__)
