@@ -24,7 +24,7 @@ git clone https://github.com/IgV52/RestAPI_Flask.git
 ```
 SQLALCHEMY_ECHO = False
 SQLALCHEMY_TRACK_MODIFICATIONS = True
-SQLALCHEMY_DATABASE_URI "postgresql://{имя пользователя}:{пароль}@db:5432/{название вашей базы данных}"
+SQLALCHEMY_DATABASE_URI = "postgresql://{имя пользователя}:{пароль}@db:5432/{название вашей базы данных}"
                 Пример =  "postgresql://ivan:123456@db:5432/mydb"
 ```
 </details>
