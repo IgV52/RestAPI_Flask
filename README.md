@@ -66,5 +66,3 @@ docker-compose up --build
 curl -i -H "Content-Type: application/json" -X POST -d "{""num_questions"": int(число)}" http://адрес_вашего_сервера:5000/api/
 ```
 </details>
-
-## <br><b>Тестовый запрос можно отправить на адрес: http://188.93.210.155:5000/api/
